@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import ListColumns from './ListColumns/ListColumns'
 
 
-function BoardContent() {
+function BoardContent({ board }) {
   return (
     // box all column
     <Box sx={{
@@ -14,7 +14,7 @@ function BoardContent() {
       display:'flex'
     }}>
       {/* box column */}
-      <ListColumns/>
+      <ListColumns columns = {board?.columns}/>
 
 
     </Box>

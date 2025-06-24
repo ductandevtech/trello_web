@@ -1,7 +1,8 @@
+import { NoteAdd } from '@mui/icons-material'
 import Column from './Column/Column'
-import { Box } from '@mui/material'
+import { Box, Button } from '@mui/material'
 
-function ListColumns() {
+function ListColumns({ columns }) {
 
   return (
     <Box sx={{
@@ -14,7 +15,27 @@ function ListColumns() {
       '&::-webkit-scrollback-track':{ m:2 }
 
     }}>
-      <Column/>
+      {columns?.map((column, index) => {
+        return <Column key={index} column={column}/>
+      })}
+
+      <Box sx={{
+        minWidth: '200px',
+        maxWidth: '200px',
+        mx: 2,
+        borderRadius: '6px',
+        height: 'fit-content',
+        bgcolor: '#ffffff3d'
+      }}>
+        <Button
+          startIcon={<NoteAdd/>}
+          sx={{
+            color: 'white',
+            width: '100%',
+            justifyContent: 'flex-start'
+          }}
+        >Add new column</Button>
+      </Box>
     </Box>
   )
 }
