@@ -42,7 +42,7 @@ function ModeLightDarkSelect() {
           </MenuItem>
 
           <MenuItem value="system">
-            <Box sx={{ display: 'flex', alignItems: 'center'}}>
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
               <SettingsSystemDaydreamSharpIcon sx={{ mr: 1 }} />
               System
             </Box>

@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import ListCards from './ListCards/ListCards'
 import ColumnFooter from './ColumnFooter'
 import ColumnHeader from './ColumnHeader'
-function Column() {
+function Column({ column }) {
   return (
     <Box sx={{
       minWidth: '300px',
@@ -16,9 +16,9 @@ function Column() {
       overflowX: 'hidden',
       overflowY: 'auto'
     }}>
-      <ColumnHeader/>
-      <ListCards/>
-      <ColumnFooter/>
+      <ColumnHeader columnHeader = {column}/>
+      <ListCards cards={column?.cards}/>
+      <ColumnFooter />
     </Box>
   )
 }

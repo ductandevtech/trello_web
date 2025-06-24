@@ -1,6 +1,7 @@
 
 import { AddToDrive, Bolt, Dashboard, FilterList, PersonAdd, VpnLock } from '@mui/icons-material'
 import { Avatar, AvatarGroup, Box, Button, Chip, Tooltip } from '@mui/material'
+import { capitalizeFirstLetter } from '~/utils/capitalizeFirstLetter'
 
 function BoardBar({ board }) {
   const menu_Style = {
@@ -39,7 +40,7 @@ function BoardBar({ board }) {
           sx={menu_Style}
           clickable
           icon={<VpnLock/>}
-          label={board?.type === 'public' ? 'Public' : 'Private'}
+          label={capitalizeFirstLetter(board?.type)}
         />
         <Chip
           sx={menu_Style}

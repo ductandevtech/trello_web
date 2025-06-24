@@ -5,7 +5,7 @@ import ContentCopy from '@mui/icons-material/ContentCopy'
 import Cloud from '@mui/icons-material/Cloud'
 import { DeleteForever } from '@mui/icons-material'
 import { useState } from 'react'
-function ColumnHeader() {
+function ColumnHeader({ columnHeader }) {
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
 
@@ -27,7 +27,7 @@ function ColumnHeader() {
       bgcolor: (theme) => (theme.palette.mode === 'dark' ? '#333643' : '#ebecf0')
 
     }}>
-      <Typography>Column title</Typography>
+      <Typography>{columnHeader.title}</Typography>
       <Tooltip title='more options'>
         <ExpandMoreIcon
           id = 'basic-button-list'

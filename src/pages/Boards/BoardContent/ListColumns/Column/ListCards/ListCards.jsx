@@ -1,7 +1,7 @@
 import { Box } from '@mui/material'
 import TrelloCard from './Card/Card'
 
-function ListCards() {
+function ListCards({ cards }) {
   return (
     <Box sx={{
       display:'flex',
@@ -18,7 +18,9 @@ function ListCards() {
       '&::-webkit-scrollbar-thumb': { backgroundColor: '#ced0da' },
       '&::-webkit-scrollbar-thumb:hover': { backgroundColor: '#bfc2cf' }
     }}>
-      <TrelloCard/>
+      {cards?.map((card, index) => {
+        return <TrelloCard key={index} card={card} />
+      })}
 
     </Box>
   )

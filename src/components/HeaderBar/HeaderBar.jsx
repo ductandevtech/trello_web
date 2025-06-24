@@ -1,4 +1,4 @@
-import ModeSelect from '../ModeSelect'
+import ModeSelect from '../ModeSelect/ModeSelect'
 import Box from '@mui/material/Box'
 import { HelpOutline, LibraryAdd, NotificationsNone, Apps as AppsIcon } from '@mui/icons-material'
 import Typography from '@mui/material/Typography'
@@ -21,7 +21,7 @@ function HeaderBar() {
       alignItems: 'center',
       justifyContent: 'space-between',
       paddingX:'12px',
-      backgroundColor:'white'
+      backgroundColor:(theme) => (theme.palette.mode === 'dark' ? '#333643' : '#ebecf0')
     }}>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
         <AppsIcon sx={{ color:'primary.main' }}/>
